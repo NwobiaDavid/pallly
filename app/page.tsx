@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { IoCheckmarkDone } from "react-icons/io5";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -100,19 +101,19 @@ export default function Home() {
         <div className="flex flex-col lg:justify-between lg:w-[70%] h-full z-20 ">
           <div>
             <div className=" p-1 " >
-              <h2 className="text-3xl lg:text-9xl font-bold " > main header header header here</h2>
-              <h3 className="text-xl lg:text-4xl opacity-80 " >sub header header header header header header here</h3>
+              <h2 className="text-3xl lg:text-9xl font-bold " >Tired of Starting Goals You Never Finish?</h2>
+              <h3 className="text-xl lg:text-4xl opacity-80 " >We don't promise magic. But we do offer something powerful: accountability that actually works.</h3>
             </div>
             <div className=" p-1 lg:mt-10 mt-5  lg:text-lg mb-16 ">
-              <h4>a very long intro here long o a very long intro here long o a very long intro here long o</h4>
-              <p>some other text here</p>
-              <p className="my-1" >some other text here</p>
-              <p>some other text here</p>
-              <p className="my-1" >some other text here</p>
+              <h4>We understand the frustration of starting a new goal with excitement, only to see motivation fizzle out a few weeks later. Pally solves this by connecting you with an accountability partner who shares your journey, keeping you focused and motivated for the long haul.</h4>
+              <p> <IoCheckmarkDone /> PALLLY connects you with a partner based on your goals, interests, and preferred communication style</p>
+              <p className="my-1" > <IoCheckmarkDone /> Schedule daily or weekly check-ins, set friendly challenges, and send encouraging messages to keep each other motivated.</p>
+              <p className="my-1" > <IoCheckmarkDone /> Monitor your progress toward your goals, stay focused, and celebrate milestones along the way.</p>
             </div>
           </div>
 
-          <div className=" lg:mb-[10%] mt-12 flex lg:ml-[10%] ">
+          <div className=" lg:mb-[10%] mt-12 flex flex-col lg:ml-[10%] ">
+            <p>stop dreaming, start achieving. be notified when we go live. sign up now! </p>
             <div className="relative border w-full lg:w-[50%] bg-white overflow-hidden flex items-center rounded-full  ">
               <input className="p-2 lg:p-4 outline-none w-[80%] lg:w-[86%] " type="email" placeholder="email" name="" id="" />
               <button className="absolute px-3 lg:px-5 lg:py-3 py-1 my-1 rounded-full right-[10px] bg-black text-white " >send</button>
