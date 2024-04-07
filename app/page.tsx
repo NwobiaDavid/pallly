@@ -82,14 +82,51 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hey there
+    <main className="flex h-screen flex-col items-center justify-between p-2">
+      {/* hey there
       {count}
       {submitted && showPopUp && <div>pop up here</div>}
       <div className="flex flex-col">
         <input type="email" value={email} onChange={handleEmailChange} />
         <button onClick={postData}>send</button>
+      </div> */}
+
+      <div className="h-[6%] ">
+        <h1>pally</h1>
       </div>
+      <div className="border relative p-2 rounded-xl lg:justify-between justify-center items-center flex flex-col lg:flex-row w-full h-[94%] ">
+
+        <div className="flex flex-col lg:justify-around lg:w-[60%] h-full z-20 ">
+          <div>
+            <div className=" p-1 " >
+              <h2 className="text-3xl font-bold " > main header header header here</h2>
+              <h3 className="text-xl opacity-80 " >sub header header header header header header here</h3>
+            </div>
+            <div className=" p-1 mt-5 mb-16 ">
+              <h4>a very long intro here long o a very long intro here long o a very long intro here long o</h4>
+              <p>some other text here</p>
+              <p className="my-1" >some other text here</p>
+              <p>some other text here</p>
+              <p className="my-1" >some other text here</p>
+            </div>
+          </div>
+
+          <div className=" mt-12 lg:w-[50%] ">
+            <div className="relative border bg-white overflow-hidden flex items-center rounded-full  ">
+              <input className="p-2 outline-none w-[80%] " type="email" placeholder="email" name="" id="" />
+              <button className="absolute px-3 py-1 my-1 rounded-full right-[10px] bg-black text-white " >send</button>
+            </div>
+          </div>
+        </div>
+
+        <div className=" h-full lg:top-0 top-[20%] lg:relative absolute flex justify-center items-center  " >
+          <div className="h-[200px]  w-[200px] bg-red-600 rotate-12 " >
+
+          </div>
+        </div>
+
+      </div>
+
     </main>
   );
 }
