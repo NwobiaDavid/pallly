@@ -82,7 +82,8 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen flex-col items-center justify-between p-2">
+    <main className="flex h-screen flex-col items-center justify-between lg:p-4 p-2 bg-purple-300 to-blue-500 bg-gradient-to-tr ">
+
       {/* hey there
       {count}
       {submitted && showPopUp && <div>pop up here</div>}
@@ -92,17 +93,17 @@ export default function Home() {
       </div> */}
 
       <div className="h-[6%] ">
-        <h1>pally</h1>
+        <h1 className=" lg:text-3xl capitalize font-bold " >pally.</h1>
       </div>
-      <div className="border relative p-2 rounded-xl lg:justify-between justify-center items-center flex flex-col lg:flex-row w-full h-[94%] ">
+      <div className="border bg-white relative p-2 lg:px-4 rounded-xl lg:justify-between justify-center items-center flex flex-col lg:flex-row w-full h-[94%] ">
 
-        <div className="flex flex-col lg:justify-around lg:w-[60%] h-full z-20 ">
+        <div className="flex flex-col lg:justify-between lg:w-[70%] h-full z-20 ">
           <div>
             <div className=" p-1 " >
-              <h2 className="text-3xl font-bold " > main header header header here</h2>
-              <h3 className="text-xl opacity-80 " >sub header header header header header header here</h3>
+              <h2 className="text-3xl lg:text-9xl font-bold " > main header header header here</h2>
+              <h3 className="text-xl lg:text-4xl opacity-80 " >sub header header header header header header here</h3>
             </div>
-            <div className=" p-1 mt-5 mb-16 ">
+            <div className=" p-1 lg:mt-10 mt-5  lg:text-lg mb-16 ">
               <h4>a very long intro here long o a very long intro here long o a very long intro here long o</h4>
               <p>some other text here</p>
               <p className="my-1" >some other text here</p>
@@ -111,16 +112,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className=" mt-12 lg:w-[50%] ">
-            <div className="relative border bg-white overflow-hidden flex items-center rounded-full  ">
-              <input className="p-2 outline-none w-[80%] " type="email" placeholder="email" name="" id="" />
-              <button className="absolute px-3 py-1 my-1 rounded-full right-[10px] bg-black text-white " >send</button>
+          <div className=" lg:mb-[10%] mt-12 flex lg:ml-[10%] ">
+            <div className="relative border w-full lg:w-[50%] bg-white overflow-hidden flex items-center rounded-full  ">
+              <input className="p-2 lg:p-4 outline-none w-[80%] lg:w-[86%] " type="email" placeholder="email" name="" id="" />
+              <button className="absolute px-3 lg:px-5 lg:py-3 py-1 my-1 rounded-full right-[10px] bg-black text-white " >send</button>
             </div>
           </div>
         </div>
 
-        <div className=" h-full lg:top-0 top-[20%] lg:relative absolute flex justify-center items-center  " >
-          <div className="h-[200px]  w-[200px] bg-red-600 rotate-12 " >
+        <div className=" h-full lg:top-0 lg:right-[10%] top-[20%] absolute flex justify-center items-center  " >
+          <div className="h-[200px] lg:h-[700px]  lg:w-[700px] w-[200px] bg-red-600 rotate-12 " >
 
           </div>
         </div>
