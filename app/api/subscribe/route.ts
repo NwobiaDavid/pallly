@@ -7,7 +7,7 @@ export async function POST(req) {
   if (req.method === 'POST') {
 
     const { email } = await req.json();
-    console.log('email=> ', email);
+    // console.log('email=> ', email);
     await connectToDB();
 
     try {
