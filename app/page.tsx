@@ -35,6 +35,7 @@ export default function Home() {
   }, []);
 
   async function postData() {
+    setIsLoading(true);
     if (!isValidEmail) {
       alert("Please insert a valid email address");
       return;
@@ -83,7 +84,8 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen flex-col items-center justify-between lg:p-4 p-2  bg-black ">
+    <>
+    <main className="flex h-screen flex-col items-center justify-between lg:p-4 p-2 overflow-hidden  bg-black ">
 
       {/* hey there
       {count}
@@ -100,13 +102,13 @@ export default function Home() {
 
         <div className="flex flex-col lg:justify-between lg:w-[70%] h-full z-20 ">
           <div>
-            <div className=" p-1  " >
+            <div className=" p-1 text-center lg:text-left " >
               <h2 className="text-3xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text " >Tired of Starting Goals You Never Finish?</h2>
-              <h3 className="text-xl w-[90%] lg:text-3xl opacity-60  " >We don't promise <span className="bg-gradient-to-tr from-purple-700 font-bold to-pink-600 text-transparent bg-clip-text ">magic</span>. But we do offer something powerful:<span className="font-bold"> accountability that actually works</span>.</h3>
+              <h3 className="text-lg w-[90%] lg:text-3xl opacity-60  " >We don't promise <span className="bg-gradient-to-tr from-purple-700 font-bold to-pink-600 text-transparent bg-clip-text ">magic</span>. But we do offer something powerful:<span className="font-bold"> accountability that actually works</span>.</h3>
             </div>
-            <div className=" p-1 lg:mt-10 mt-5  lg:text-lg mb-16 ">
-              <h4 className=" tracking-wider mb-16 w-[70%] " >We understand the frustration of starting a new goal with excitement, only to see motivation fizzle out a few weeks later. Pally solves this by connecting you with an accountability partner who shares your journey, keeping you focused and motivated for the long haul.</h4>
-              <div className="w-[80%]  ">
+            <div className=" p-1 lg:mt-10 mt-5  lg:text-lg lg:mb-16 ">
+              <h4 className=" lg:tracking-wider hidden lg:flex lg:mb-16 lg:w-[70%] " >We understand the frustration of starting a new goal with excitement, only to see motivation fizzle out a few weeks later. Pally solves this by connecting you with an accountability partner who shares your journey, keeping you focused and motivated for the long haul.</h4>
+              <div className="lg:w-[80%]  ">
                 <p className="flex items-center"> <Image className="mr-2" alt="check" src={"/props/check.svg"} width={20} height={20} />Pallly connects you with a partner based on your goals, interests, and preferred communication style</p>
                 <p className="my-3 flex  items-center " > <Image className="mr-2" alt="check" src={"/props/check.svg"} width={20} height={20} /> Schedule daily or weekly check-ins, set friendly challenges, and send encouraging messages to keep each other motivated.</p>
                 <p className=" flex items-center" ><Image className="mr-2" alt="check" src={"/props/check.svg"} width={20} height={20} /> Monitor your progress toward your goals, stay focused, and celebrate milestones along the way.</p>
@@ -119,19 +121,32 @@ export default function Home() {
             {/* <div > */}
             <form className="relative border w-full lg:w-[60%] bg-white overflow-hidden flex items-center rounded-2xl  " onClick={postData} >
               <input value={email} onChange={handleEmailChange} className="p-2 lg:p-4 outline-none w-[80%] lg:w-[86%] " type="email" placeholder="example@example.com" name="" id="" />
-              <button type="submit" className="absolute px-3 lg:px-6 lg:py-3 py-1 my-1 rounded-2xl right-[10px] bg-gradient-to-tr from-blue-600 to-purple-700 hover:bg-black duration-200 text-white flex items-center   " >send <Image className=" ml-1" alt="check" src={"/props/send.png"} width={20} height={20} /> </button>
+              <button type="submit" className="absolute px-3 lg:px-6 lg:py-3 py-1 my-1 rounded-2xl right-[10px] bg-gradient-to-tr from-blue-600 to-purple-700 hover:from-black hover:to-black duration-300 text-white flex items-center   " > 
+               {isLoading ? (
+                    <span>Loading...</span>
+                  ) : (
+                    <>
+                      <span>Send</span>
+                      <Image className="ml-1" alt="check" src={"/props/send.png"} width={20} height={20} />
+                    </>
+                  )}
+              </button>
             </form>
-            <p className="font-semibold ml-2 " >({count} people signed up)</p>
+            <p className="font-semibold ml-2 text-xs lg:text-left text-center " >({count} people signed up)</p>
             {/* </div> */}
           </div>
         </div>
 
-        <div className=" h-full lg:top-0 lg:right-[5%] top-[20%] absolute flex justify-center items-center  " >
+        <div className=" h-full lg:top-0 opacity-50 lg:opacity-100 lg:right-[5%] -bottom-52 absolute flex justify-center items-center  " >
           <Image className="  " alt="main image" src={"/props/phone.png"} width={700} height={700} />
         </div>
 
       </div>
 
+    {submitted && showPopUp && <div className="h-[700px] w-[700px] flex justify-center bg-white " >pop up here</div>}
     </main>
+
+
+    </>
   );
 }
