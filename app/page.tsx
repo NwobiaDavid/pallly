@@ -16,7 +16,7 @@ export default function Home() {
     const fetchCount = async () => {
       let responseData;
       try {
-        const res = await fetch("http://localhost:3000/api/count", {
+        const res = await fetch("/api/count", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -44,7 +44,7 @@ export default function Home() {
 
     let responseData;
     try {
-      const response = await fetch("http://localhost:3000/api/subscribe", {
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
