@@ -94,15 +94,15 @@ export default function Home() {
       </div> */}
 
       <div className="h-[6%] ">
-        <h1 className=" lg:text-3xl capitalize font-bold text-white " >pally.</h1>
+        <h1 className=" lg:text-3xl capitalize font-bold text-white " >pallly..</h1>
       </div>
-      <div className="border bg-white relative p-2 lg:px-5 lg:py-3 rounded-xl lg:justify-between justify-center items-center flex flex-col lg:flex-row w-full h-[94%] ">
+      <div className="border bg-white relative p-2 lg:px-8 lg:py-3 rounded-xl lg:justify-between justify-center items-center flex flex-col lg:flex-row w-full h-[94%] ">
 
         <div className="flex flex-col lg:justify-between lg:w-[70%] h-full z-20 ">
           <div>
             <div className=" p-1  " >
               <h2 className="text-3xl lg:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text " >Tired of Starting Goals You Never Finish?</h2>
-              <h3 className="text-xl w-[90%] lg:text-3xl opacity-60  " >We don't promise <span className="bg-gradient-to-tr from-purple-700 bg-clip-text bg-transparent to-pink-500 ">magic</span>. But we do offer something powerful:<span className="font-semibold"> accountability that actually works</span>.</h3>
+              <h3 className="text-xl w-[90%] lg:text-3xl opacity-60  " >We don't promise <span className="bg-gradient-to-tr from-purple-700 font-bold to-pink-600 text-transparent bg-clip-text ">magic</span>. But we do offer something powerful:<span className="font-bold"> accountability that actually works</span>.</h3>
             </div>
             <div className=" p-1 lg:mt-10 mt-5  lg:text-lg mb-16 ">
               <h4 className=" tracking-wider mb-16 w-[70%] " >We understand the frustration of starting a new goal with excitement, only to see motivation fizzle out a few weeks later. Pally solves this by connecting you with an accountability partner who shares your journey, keeping you focused and motivated for the long haul.</h4>
@@ -117,16 +117,17 @@ export default function Home() {
           <div className=" lg:mb-[10%] mt-12 flex flex-col  ">
             <p className="ml-2 text-sm font-semibold " >Stop dreaming, start achieving. Be notified when we go live. Sign up now! </p>
             {/* <div > */}
-              <form className="relative border w-full lg:w-[60%] bg-white overflow-hidden flex items-center rounded-2xl  " onClick={postData} action="POST">
-              <input className="p-2 lg:p-4 outline-none w-[80%] lg:w-[86%] " type="email" placeholder="example@example.com" name="" id="" />
-              <button className="absolute px-3 lg:px-6 lg:py-3 py-1 my-1 rounded-2xl right-[10px] bg-gradient-to-tr from-blue-600 to-purple-700 hover:bg-black duration-200 text-white flex items-center   " >send <Image className=" ml-1" alt="check" src={"/props/send.png"} width={20} height={20} /> </button>
-              </form>
+            <form className="relative border w-full lg:w-[60%] bg-white overflow-hidden flex items-center rounded-2xl  " onClick={postData} >
+              <input value={email} onChange={handleEmailChange} className="p-2 lg:p-4 outline-none w-[80%] lg:w-[86%] " type="email" placeholder="example@example.com" name="" id="" />
+              <button type="submit" className="absolute px-3 lg:px-6 lg:py-3 py-1 my-1 rounded-2xl right-[10px] bg-gradient-to-tr from-blue-600 to-purple-700 hover:bg-black duration-200 text-white flex items-center   " >send <Image className=" ml-1" alt="check" src={"/props/send.png"} width={20} height={20} /> </button>
+            </form>
+            <p className="font-semibold ml-2 " >({count} people signed up)</p>
             {/* </div> */}
           </div>
         </div>
 
-        <div className=" h-full lg:top-0 lg:right-[10%] top-[20%] absolute flex justify-center items-center  " >
-          <Image className="  " alt="main image" src={"/props/phone.png"} width={400} height={400} />
+        <div className=" h-full lg:top-0 lg:right-[5%] top-[20%] absolute flex justify-center items-center  " >
+          <Image className="  " alt="main image" src={"/props/phone.png"} width={700} height={700} />
         </div>
 
       </div>
