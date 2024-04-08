@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 import userModal from '@/utlis/model/user';
 
-export async function POST(req: { method: string; json: () => PromiseLike<{ email: any; }> | { email: any; }; }) {
+export async function POST(req) {
   if (req.method === 'POST') {
 
     const { email } = await req.json();
