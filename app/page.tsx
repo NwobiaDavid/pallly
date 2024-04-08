@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { IoCheckmarkDone } from "react-icons/io5";
+import { FormEvent, useEffect, useState } from "react";
+// import { IoCheckmarkDone } from "react-icons/io5";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -34,7 +34,7 @@ export default function Home() {
     fetchCount();
   }, []);
 
-  async function postData(e) {
+  async function postData(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
     if (!isValidEmail) {

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { MongoClient } from 'mongodb';
 import userModal from '@/utlis/model/user';
 
-export async function POST(req) {
+export async function POST(req:any) {
   if (req.method === 'POST') {
 
     const { email } = await req.json();
