@@ -71,16 +71,17 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowPopUp(false);
-      if (typeof window !== 'undefined') {
-        window.location.reload();
-      }
-    }, 7000);
-
-
-    return () => clearTimeout(timeout);
-  }, []);
+    if (showPopUp) {
+      const timeout = setTimeout(() => {
+        setShowPopUp(false);
+        if (typeof window !== 'undefined') {
+          window.location.reload();
+        }
+      }, 7000);
+  
+      return () => clearTimeout(timeout);
+    }
+  }, [showPopUp]);
 
 
   function validateEmail(email: string) {

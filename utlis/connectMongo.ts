@@ -1,25 +1,32 @@
-import mongoose from "mongoose";
+import mongoose, { ConnectOptions } from "mongoose";
 
-let cached = global.mongoose;
+const MONGO_URI = process.env.MONGODB_URI;
 
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+if (!MONGO_URI) {
+  throw new Error("Please define the MONGODB_URI environment variable.");
 }
 
+let connection: mongoose.Connection | any = null;
+
 async function connectToDB() {
-  if (cached.conn) {
-    console.log("Cached mongodb is called!");
-    return cached.conn;
+  if (connection) return connection;
+
+  mongoose.set("strictQuery", true);
+
+  try {
+    if (MONGO_URI) {
+      const options: ConnectOptions = {
+        // Additional connection options (optional)
+      };
+      connection = await mongoose.connect(MONGO_URI, options);
+      console.log("Connected to MongoDB!");
+    }
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    process.exit(1); // Exit process on connection failure
   }
 
-  if (!cached.promise) {
-    mongoose.set("strictQuery", true);
-    cached.promise = await mongoose.connect(process.env.MONGODB_URI);
-    console.log("connected to mongoDB!");
-  }
-
-  cached.conn = await cached.promise;
-  return cached.conn;
+  return connection;
 }
 
 export default connectToDB;
