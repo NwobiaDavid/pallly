@@ -77,7 +77,7 @@ export default function Home() {
         if (typeof window !== 'undefined') {
           window.location.reload();
         }
-      }, 7000);
+      }, 4000);
   
       return () => clearTimeout(timeout);
     }
