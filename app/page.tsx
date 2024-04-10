@@ -13,8 +13,8 @@ export default function Home() {
   const [showPopUp, setShowPopUp] = useState(false); // State to control pop-up visibility
 
   useEffect(() => {
+    let responseData;
     const fetchCount = async () => {
-      let responseData;
       try {
         const res = await fetch("/api/count", {
           headers: {
